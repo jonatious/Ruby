@@ -1,0 +1,18 @@
+<center>
+	<h4>Worker List</h4><br>
+	<table id="workers_table" border="2px" style="width:30%" class="table table-striped">
+		<tr>
+			<th class="active">First Name</th>
+			<th class="active">Last Name</th>
+			<th class="active">Profile</th>
+		</tr>
+		<% @all_workers.each do |w| %>
+			<%= render :partial => 'worker',:locals => {:w => w} %>
+		<% end %>
+	</table>
+	<br>
+	<br>
+	<br>
+	<table id="display_notice" style="width:25%"></table>
+	<div id="div_new_worker"><%= render 'worker_form' %></div>
+</center>

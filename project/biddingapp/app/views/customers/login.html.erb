@@ -1,0 +1,20 @@
+<center>
+<form action="/customers/validate_login" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<table style="width:20%;border-spacing:5px">
+  	<tr>
+  		<td><input type="text" name="username" class="form-control" value="" placeholder="Username"></td>
+		</tr>
+		<tr>
+ 		 	<td><input type="password" name="password" class="form-control" value="" placeholder="Password"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="submit" style="width:100%" class="btn btn-primary" value="Log In"></td>
+		</tr>
+		<tr>
+			<td align="center"><%= link_to 'Not a member? Sign Up', new_customer_path, class: 'btn btn-default'%></td>
+		</tr>
+	</table>
+</form>
+</center>
+<br>

@@ -1,0 +1,24 @@
+HW 2. Due 11:59PM June 18
+
+What languages are you most familiar with?
+
+{indu: "C++,JAVA,SQL", jonatious: "C++,C#,java,sql"}
+
+From that language point of view, how is Ruby similar or different from what you're most familiar with?
+
+{indu: " Ruby is also object oriented like java. However ruby is dynamically typed but java is not , also interfaces are not present in ruby but instead we have mixins. Finally, semi colon, paranthesis, class and functions are optional in ruby there by making it much simpler ", 
+jonatious: "Ruby programming easier compared to other languages with optional parenthesis, semi colons, dynamic method creation, irb (for trial and error), modules and active records."}
+
+What are some of the things that excited you as you learn Ruby?
+
+{indu: "I'm excited about the wide range of inbuilt functions available to perform various tasks which considerably reduces the code size compared to other programing languages I know. Another thing that excites me in ruby is meta programming. " , " jonatious: "Active Records (not using sql to perform queries/table operations),irb(for looking up to methods available and trying out methods), method_missing"}
+
+What are some of the things that concerns you about Ruby?
+
+{indu: "I'm concerned about the issue of remembering the conventions and inbuilt methods available. I'm also concerned about implementaation of active records, which if not properly used can turn the database application messy.", jonatious: "I am concerned about the speed of the program when large data is involved and the grammer of singular/plural involved in active records onventions"}
+
+Total [10]: 7
+Text is hard to read, with no good paragraph separations. Write from the point of view of someone reading - does it retain their attention, does it invite them to read. Need one collective answer, not two answers.
+ActiveRecords has nothing to do with the question on hand.
+Insufficient details.
+Too many spelling errors.

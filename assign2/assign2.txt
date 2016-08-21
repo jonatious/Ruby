@@ -1,0 +1,23 @@
+Assign2 Due 11:59PM June 22
+
+Write a Ruby program using Active Records (no rails in this assignment) to do the following:
+
+In this assignment we will create Ruby code that makes use of Active Records. 
+Create a class that will interact with active records models. The models we 
+use will represent workers and work orders. 
+
+Start by uncommenting one test at a time and implement minimum code to make 
+all uncommented tests pass. The following are a good sequence of test suites 
+to work with:
+
+worker_test
+work_orders_test
+manage_workers_test
+
+Total [100]: 99
+All tests pass [30]:
+Worker [20]:
+WorkOrder [20]:
+ManageWorkers [20]:
+Overall quality [10]: -1
+Place all the validates first, then belongs_to

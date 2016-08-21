@@ -1,0 +1,12 @@
+$:.unshift(File.join(File.dirname(__FILE__), 'src'))
+
+require 'rake'
+require 'rake/testtask'
+
+Rake::TestTask.new('run_tests') do |test|
+  test.pattern = 'test/*_test.rb'
+  test.verbose = true
+  test.warning = true
+end
+
+task :default => [:run_tests]

@@ -1,0 +1,41 @@
+<center>
+	<h4>Work Details for <%= @work.name %></h4><br>
+	<form action="/works/assign">
+	<table border="2px" style="width:30%" class="table table-striped">
+		<tr>
+			<th class="active">Name</th>
+			<th class="active">Status</th>
+			<th class="active">Worker</th>
+		</tr>
+		<tr>
+			<td><%= @work.name%></td>
+			<td><%= @work.work_status.status%></td>
+			<% if @work.worker %>
+				<td><%= @work.worker.first_name%> <%= @work.worker.last_name%></td>
+			<% else %>
+				<td/>
+			<% end %>
+		</tr>
+		<tr>
+			<% if @work.work_status_id == 1 %>
+				<td colspan="3" align="center">
+				<% if Worker.count > 0 %>
+					<select name="worker_id">
+						<% Worker.all.each do |w| %>
+							<option value="<%= w.id %>"><%= w.first_name %> <%= w.last_name%></option>
+						<% end %>
+					</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="Assign Worker" class="btn btn-primary"></td>
+				<% else %>
+					<p style="color: #9F6000;background-color: #FEEFB3;margin:10px 22px;font-size:1.2em;vertical-align:middle;">No workers available</p>
+				<% end %>
+			<% elsif @work.work_status_id == 2 %>
+				<td colspan="3" align="center"><%= link_to 'Mark as Completed', set_completed_works_path, class: 'btn btn-primary'%></td>
+			<% else%>
+				<td colspan="3" align="center">Work is Completed </td>
+			<% end %>
+		</tr>
+	</table>
+	</form>
+	<br>
+</center>

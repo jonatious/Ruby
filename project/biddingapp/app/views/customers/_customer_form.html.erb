@@ -1,0 +1,61 @@
+
+<% if @customer.errors.any? %>
+	<div class="alert alert-danger">
+		<ul>
+		<% @customer.errors.full_messages.each do |message| %>
+	  	<li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+<center>
+<h3>Edit Profile</h3>
+
+<%= form_for @customer, :remote => true do |form| %>
+	<table border="2px" style="width:70%" class="table table-striped">
+		<tr>
+			<td>Username*</td>
+			<td><%= form.text_field :username, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>First Name*</td>
+			<td><%= form.text_field :first_name, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Last Name*</td>
+			<td><%= form.text_field :last_name, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Street Address</td>
+			<td><%= form.text_field :address, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td><%= form.text_field :city, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td><%= form.text_field :state, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Zip Code</td>
+			<td><%= form.text_field :zipcode, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Country</td>
+			<td><%= form.text_field :country, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Contact Number</td>
+			<td><%= form.text_field :contact_no, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Email ID*</td>
+			<td><%= form.text_field :email, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><%= form.submit('Update') %></td>
+		</tr>
+	</table>
+<% end %>
+</center>

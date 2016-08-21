@@ -1,0 +1,5 @@
+Your program works [10 pts]:
+Code quality [5 pts]:
+Design quality [5 pts]:
+Code coverage through automated tests [5 pts]:
+Demo [5 pts]:

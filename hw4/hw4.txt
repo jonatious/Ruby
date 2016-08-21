@@ -1,0 +1,49 @@
+HW 4. Due 11:59PM July 10
+There will be no reviews for this homework.
+
+What web development frameworks other than Rails have you used in the past?
+
+The web development frameworks other than Rails that we have used in past are
+		
+		1).NET framework
+		2) Entity framework
+		
+How does Ruby on Rails compare with those (pros and cons)?
+
+Pros:
+	Ruby has simple syntaxes and parenthesis, semicolons, classes, and functions are considered as optional requirements.
+	Interactive Ruby Shell (IRB), which allows experimenting ruby commands in real time is very helpful for developers.
+	Ruby conventions helps in speeding up development since we don't have to spend much time in configuring files for setup.
+	Rails has easy automated testing tools which is a major advantage over other frameworks.
+	Testing the application real time is easier unlike ASP NET where we have to stop debugging rebuild and debug again.
+	
+Cons:
+	
+	It is very difficult to get a good documentation for Rails when compared to other popular frameworks.
+	Rails framework does not have a design view to edit pages unlike in ASP NET in Visual Studio, we have an option to drag and drop buttons, forms and other HTML options.
+	Deviation from conventions makes the development process frustrating and difficult.
+	Querying database with complex queries such as joins is very difficult to implement.
+	
+Ruby on Rails is lightweight framework that promotes rapid application development. But then it's adoption in the large enterprise has not been great. What are some of the reasons for that?
+
+	Ruby on rails promotes rapid application development and seems like a good option to develop a stand-alone applications in lesser time. However in situations when there are dependencies on other existing applications, it can become very hard to rewrite all the depending applications using rails. Legacy enterprises, which were opened long back mostly have their systems set to use Java, C++ and .net frameworks. Since ruby on rails came along now, the enterprises will have to completed redefine the systems to match to the rails conventions which makes the task quite tedious.
+	
+	Moreover, large enterprises have complex databases and might require complex queries which is quite difficult to achieve when rails framework is adopted.
+
+What do you really like about Ruby on Rails (your experience, views, not something read off the web)?
+
+	Ruby on rails helped us to implement things very easily and in a straight forward manner. For example, in our rails project, we just had to do me.bids to get all my bids. This was possible because of active records feature of rails. Whereas, in other programming languages, we would have to write a query like "select * from bids where customer_id = me.id" .
+	
+	Implementing AJAX calls was challenging at the same time interesting to use.
+	
+	Though Active records do not support composite key, the gem file named composite_primary_keys extends ActiveRecord to support composite keys. Thus, the presence of gem files reduces the struggles of developers and helps a lot in easy implementation.
+	
+	
+What do you not like or think should be improved?
+	
+	A proper online documentation for ruby can be made.
+	When conventions are deviated, the alternate way should be made easier. For example, there should be easy ways to run stored procedures that could implement complex queries with ease.
+	A way to auto generate routes can be created based on the actions given in the controller.
+	
+
+

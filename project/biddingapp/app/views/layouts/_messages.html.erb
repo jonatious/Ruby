@@ -1,0 +1,10 @@
+<%if alert%>
+<div class="alert alert-danger"><%= alert%></div>
+<%end%>
+
+<%if notice%>
+<div class="alert alert-success"><%= notice%></div>
+<%end%>
+<%if !alert && !notice%>
+<div class="alert">&nbsp</div>
+<%end%>

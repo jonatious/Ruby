@@ -1,0 +1,15 @@
+Assign4 Due 11:59PM July 2
+
+Reimplement assign 3, but this time with test first. Write test before
+writing any code and then write minimum code to make the test pass.
+Incrementally develop code with tests.
+
+Also, as much as possible, make the calls to the server from the client as ajax calls.
+
+Total [100]: 100
+Program works [30]:
+Ajax calls for worker [20]:
+Ajax calls for Work [20]:
+Test quality [20]:
+Coverage [10]:
+

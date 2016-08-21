@@ -1,0 +1,35 @@
+<center>
+	<h4>Work List for <%= "#{@worker.first_name} #{@worker.last_name}" %></h4><br>
+	<form action="/workers/assign">
+		<table border="2px" style="width:30%" class="table table-striped">
+			<tr>
+				<th class="active">Name</th>
+				<th class="active">Status</th>
+				<th class="active">Review</th>
+			</tr>
+			<% @worker.works.each do |work| %>
+				<tr>
+					<td><%= work.name%></td>
+					<td><%= work.work_status.status%></td>
+					<td align="center"><%= link_to 'Review', work_path(work.id), class: 'btn btn-info' %></td>
+				</tr>
+			<% end %>
+			<tr>
+				<td colspan="3" align="center">
+				<% if Work.where("work_status_id == 1").count > 0 %>
+					<select name="work_id">
+						<% Work.where("work_status_id == 1").each do |w| %>
+							<option value="<%= w.id %>"><%= w.name %></option>
+						<% end %>
+					</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="Assign Work" class="btn btn-primary">
+				<% else %>
+					<p style="color: #9F6000;background-color: #FEEFB3;margin:10px 22px;font-size:1.2em;vertical-align:middle;">No unassigned works available</p>
+				<% end %>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<%= link_to 'New Work', new_work_path, class: 'btn btn-primary'%>
+</center>

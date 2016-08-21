@@ -1,0 +1,5 @@
+$('#alerter').remove();
+$('#workerform')[0].reset();
+$('#workers_table').append('<%=j render :partial => 'worker', :locals => {:w => @worker}%>');
+$('#display_notice tr').remove();
+$('#display_notice').append('<%=j render :partial => '/layouts/notice',:locals => {:note => 'Successfully Created Worker'}%>');

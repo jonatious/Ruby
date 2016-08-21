@@ -1,0 +1,26 @@
+Assign3 Due 11:59PM June 29
+
+In this assignment we will create a Rails application with the following details:
+
+WorkStatus: There will be no controller for this. It will be pre-populated with seed data of values Created, Assigned, Completed.
+
+Work: This will have a name and a WorkStatus. The WorkStatus will automatically be assigned to Created when Work is created.
+
+Worker: has first name, last name. Two workers can have the same first name.
+Two workers may have the same last name. No two workers may have the same 
+first name and last name.
+
+The controller for workers will list all workers and provide a way to add a new worker.
+
+The show link for a worker will take to the page for that worker. On this page list all the works assigned to the worker and also all works completed by the worker. When a work is clicked on, take to a page where the work can be reviewed.
+
+Provide a way to assign a work to the worker. The list of work shown should only include works that are in the Created status.
+
+Work review page. This page shows only one work. If it is in Created state, it can be assigned to a worker. If it is in assigned state, it can be completed. If it is in completed state, it can't be changed to any other state.
+
+Total [100]: 100
+Program works [20]:
+Code quality [20]:
+The list of works shows all works [20]:
+List to assign shows only unassigned works [20]:
+Able to navigate through pages without having to enter urls [20]:

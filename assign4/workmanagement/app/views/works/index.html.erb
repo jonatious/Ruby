@@ -1,0 +1,19 @@
+<center>
+	<h4>Work List</h4><br>
+	<table id="works_table" border="2px" style="width:30%" class="table table-striped">
+		<tr>
+			<th class="active">Name</th>
+			<th class="active">Status</th>
+			<th class="active">Assigned Worker</th>
+			<th class="active">Review</th>
+		</tr>
+		<% @all_works.each do |w| %>
+			<%= render :partial => 'work',:locals => {:w => w} %>
+		<% end %>
+	</table>
+	<br>
+	<br>
+	<br>
+	<table id="display_notice" style="width:25%"></table>
+	<div id="div_new_work"><%= render 'work_form' %></div>	
+</center>

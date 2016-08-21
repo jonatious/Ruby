@@ -1,0 +1,57 @@
+<% if @auction_item.errors.any? %>
+	<div class="alert alert-danger">
+		<ul>
+		<% @auction_item.errors.full_messages.each do |message| %>
+	  	<li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<center>
+<% if (params[:action] == 'new' || params[:action] == 'create') %>
+	<h3>Create Auction Item</h3>
+<% else %>
+	<h3>Edit Item</h3>
+<% end %>
+
+<%= form_for @auction_item, :remote => true do |form| %>
+	<table border="2px" style="width:30%" class="table table-striped">
+		<tr>
+			<td>Name</td>
+			<td><%= form.text_field :name %></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td><%= form.text_area :description, cols: 40, rows: 4, placeholder: 'Enter description here' %></td>
+		</tr>
+		<tr>
+			<td>Starting Bid</td>
+			<td>
+				<div class="input-group">
+					<div class="input-group-addon">$</div>
+					<%= form.text_field :highest_bid ,class: 'form-control', placeholder: 'Amount'%>
+					<div class="input-group-addon">.00</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Auction Duration</td>
+			<td>
+				<div class="input-group">
+					<%= form.text_field :auction_days ,class: 'form-control' %>
+					<div class="input-group-addon">Days</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<% if (params[:action] == 'new' || params[:action] == 'create') %>
+				<td colspan="2" align="center"><%= form.submit('Create Item') %></td>
+			<% else %>
+				<td colspan="2" align="center"><%= form.submit('Update') %></td>
+			<% end %>
+			
+		</tr>
+	</table>
+<% end %>
+</center>

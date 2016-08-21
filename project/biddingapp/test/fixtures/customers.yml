@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: username1
+  password: dkpwT1l3dmkyY2h0Z0NnNkFJM1c5ZFpUZnRwOW9iY21OSlZzWEt3Y01aVT0tLU1MTzIrVThvbk92dEFuMCs3TzYxbWc9PQ==--2c406b3195dcdee8c5dc92e83df6eefe5a7c3432
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  zipcode: 1
+  country: MyString
+  contact_no: MyString
+  email: MyString@gmail.com
+
+two:
+  username: username2
+  password: dkpwT1l3dmkyY2h0Z0NnNkFJM1c5ZFpUZnRwOW9iY21OSlZzWEt3Y01aVT0tLU1MTzIrVThvbk92dEFuMCs3TzYxbWc9PQ==--2c406b3195dcdee8c5dc92e83df6eefe5a7c3432
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  zipcode: 1
+  country: MyString
+  contact_no: MyString
+  email: MyString@gmail2.com

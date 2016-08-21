@@ -1,0 +1,130 @@
+<style>
+table, th, td {
+    padding: 5px;
+}
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 100px;
+}
+table {
+    border-spacing: 5px;
+}
+</style>
+
+<% if @auction_item.errors.any? %>
+	<div class="alert alert-danger">
+		<ul>
+		<% @auction_item.errors.full_messages.each do |message| %>
+	  	<li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<center>
+	<% if @auction_item.sold_y_n == 'Yes' && @customer.id == @auction_item.bidder_id %>
+		<p class="alert alert-success">Hurray!! You have won the auction</p>
+	<% end %>
+	<% if @auction_item.sold_y_n == 'Yes' && @customer.id == @auction_item.customer_id %>
+		<% if @auction_item.bidder_id %>
+			<p class="alert alert-success">Hurray!! The auction winner is <%= "#{@bidder.first_name} #{@bidder.last_name}" %></p>
+		<% else %>
+			<p class="alert alert-info">Sorry the auction ended without any bidders</p>
+		<% end %>
+	<% end %>
+	<h3>Item Details</h3>
+	<form action="/auction_items/update_bid" method="post" data-remote=true>
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<br><br>
+	<table border="2px" style="width:75%" data-remote=true class="table table-striped">
+		<tr>
+			<td>Name</td>
+			<td><%= @auction_item.name %></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td><textarea disabled cols="40" rows="4"><%= @auction_item.description %></textarea></td>
+		</tr>
+		<tr>
+			<td>Current Bid</td>
+			<td>$<%= @auction_item.highest_bid %></td>
+		</tr>
+		<tr>
+			<td>Auction End Time</td>
+			<td><%= @auction_item.created_at + @auction_item.auction_days %></td>
+		</tr>
+		<tr>
+			<td>Sold?</td>
+			<td>
+					<%= @auction_item.sold_y_n %>
+			</td>
+		</tr>
+		<% if @customer.bids.where(:auction_item_id => @auction_item.id).first && @auction_item.sold_y_n == 'Yes' %>
+		<tr>
+			<td>My bid</td>
+			<td>
+					$<%= @customer.bids.where(:auction_item_id => @auction_item.id).first.amount %>
+			</td>
+		</tr>
+		<% end %>
+		<% if @auction_item.sold_y_n == 'Yes' && @customer.id == @auction_item.customer_id %>
+		<tr>
+			<% if @auction_item.bidder_id %>
+			<td>Contact Winner</td>
+			<td>
+				<a href="mailto:<%= @bidder.email%>?Subject=Hello%20again" target="_top"><%= "#{@bidder.first_name} #{@bidder.last_name}"%></a>
+			</td>
+			<% else %>
+				<td colspan="2">No winners for this auction</td>
+			<% end %>
+		</tr>
+		<% end %>
+		<% if @auction_item.sold_y_n == 'Yes' && @customer.id != @auction_item.customer_id%>
+		<tr>
+			<td>Contact Seller</td>
+			<td>
+				<a href="mailto:<%= @auction_item.customer.email%>?Subject=Hello" target="_top"><%= "#{@auction_item.customer.first_name} #{@auction_item.customer.last_name}"%></a>
+			</td>
+		</tr>
+		<% end %>
+		<% if (@customer.id != @auction_item.customer_id && @auction_item.sold_y_n != 'Yes') %>
+				<tr>
+					<td align="left">
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							<input type="text" name="bid" placeholder="<% if @customer.bids.where(:auction_item_id => @auction_item.id).first %><%= @customer.bids.where(:auction_item_id => @auction_item.id).first.amount %><% end %>" />
+						</div>
+					</td>
+					<% if @customer.bids.where(:auction_item_id => @auction_item.id).count == 0 %>
+						<td align="left"><input type="submit" value="Make Bid" class="btn btn-primary" /></td>
+					<% else %>
+						<td align="left"><input type="submit" value="Update Bid" class="btn btn-primary" /></td>
+					<% end %>
+				</tr>
+		<% end %>
+	</table>
+	</form>
+	<br><br><br><br>
+		<% if @customer.id == @auction_item.customer_id %>
+			<h3>Bids</h3>
+			<% if @auction_item.bids.count > 0 %>
+			<table border="2px" style="width:75%" class="table table-striped">
+				<tr>
+					<th style="width: 2px">Bidder</th>
+					<th style="width: 2px">Amount</th>
+					<th style="width: 200px">Time of Bid</th>
+				</tr>
+				<% @auction_item.bids.each do |bid| %>
+					<tr>
+						<td><a href="mailto:<%= bid.customer.email%>?Subject=Hello" target="_top"><%= "#{bid.customer.first_name} #{bid.customer.last_name}"%></td>
+						<td>$<%= bid.amount %></td>
+						<td><%= bid.updated_at %></td>
+					</tr>
+				<% end %>
+			</table>
+			<% else %>
+			<p class="alert alert-danger">No bids made yet</p>
+			<% end %>
+		<% end %>
+</center>

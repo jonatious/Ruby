@@ -1,0 +1,20 @@
+$:.unshift(File.join(File.dirname(__FILE__), 'src'))
+
+require 'rake'
+require 'rake/testtask'
+require './src/db'
+require 'rake/clean'
+
+Rake::TestTask.new('run_tests') do |test|
+  test.pattern = 'test/*_test.rb'
+  test.verbose = true
+  test.warning = true
+end
+               
+task :setupdb do
+  `sqlite3 #{database_name} < createSchema.sql`
+end
+
+CLEAN.include database_name
+
+task :default => [:setupdb, :run_tests, :clean]

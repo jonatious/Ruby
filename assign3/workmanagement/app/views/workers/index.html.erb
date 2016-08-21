@@ -1,0 +1,21 @@
+<center>
+	<% if @all_workers.count > 0 %>
+		<h4>Worker List</h4><br>
+		<table border="2px" style="width:30%" class="table table-striped">
+			<tr>
+				<th class="active">First Name</th>
+				<th class="active">Last Name</th>
+				<th class="active">Profile</th>
+			</tr>
+			<% @all_workers.each do |w| %>
+				<tr>
+					<td><%= w.first_name%></td>
+					<td><%= w.last_name%></td>
+					<td align="center"><%= link_to 'View', worker_path(w.id), class: 'btn btn-info'%></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+	<br>
+	<%= link_to 'New Worker', new_worker_path, class: 'btn btn-primary'%>
+</center>

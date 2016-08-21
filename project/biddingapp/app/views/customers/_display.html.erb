@@ -1,0 +1,46 @@
+<center>
+	
+	<% if @items.count > 0 %>	
+		<% if params[:action] == 'search_items' %>
+			<h3>Item Search Results</h3>
+		<% else %>
+			<h3>My items</h3>
+		<% end %>
+		<br><br>
+		<table border="2px" style="width:75%" class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Current Bid</th>
+				<th>Auction End Time</th>
+				<th>Sold?</th>
+				<% if params[:action] == 'display_items' || params[:action] == 'update' || params[:action] == 'delete' %>
+					<th>Edit</th>
+					<th>Delete</th>
+				<% end %>
+				<% if params[:action] == 'display_bids' %>
+					<th>My Bid</th>
+				<% end %>
+			</tr>
+			<% @items.each do |item|%>
+			<tr>
+				<td style="valign=center;"><%= link_to item.name, {:controller => "auction_items", :action => "view", :id => item.id }, :remote => true, :class => 'btn btn-default'  %></td>
+				<td>$<%= item.highest_bid %></td>
+				<td><%= item.created_at + item.auction_days.days %></td>
+				<td><%= item.sold_y_n %></td>
+				<% if params[:action] == 'display_items' || params[:action] == 'update' || params[:action] == 'delete' %>
+					<% if item.sold_y_n != 'Yes' %>
+						<td><%= link_to 'Edit', edit_auction_item_path(item.id), :remote => true, class: 'btn btn-primary'%></td>
+						<td><%= link_to 'Delete', {:controller => "auction_items", :action => "confirm_delete", :id => item.id }, :remote => true, class: 'btn btn-danger'%></td>
+					<% else %>
+						<td></td>
+						<td></td>
+					<% end %>
+				<% end %>
+				<% if params[:action] == 'display_bids' %>
+					<td>$<%= @my_bids[item.name] %></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
+	<% end %>
+</center>

@@ -1,0 +1,8 @@
+Total [10]: 8
+All tests pass.
+Code quality:
+	Indent properly.
+	
+Overall quality.
+New tests pass.
+	Does not handle the case when the number of parameters passed is not correct.

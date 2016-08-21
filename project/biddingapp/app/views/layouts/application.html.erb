@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BiddingApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<style>
+table, th, td {
+   padding: 5px;
+}
+table {
+   border-spacing: 5px;
+}
+</style>
+
+</head>
+<body>
+
+<%= render '/layouts/nav_bar'%>
+<div id="message_div"> <%= render '/layouts/messages' %></div>
+<%= yield %>
+
+</body>
+</html>

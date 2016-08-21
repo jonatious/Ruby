@@ -1,0 +1,38 @@
+<% if @worker.errors.any? %>
+	<div class="alert alert-danger">
+		<ul>
+		<% @worker.errors.full_messages.each do |message| %>
+	  	<li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<center>
+<% if (params[:action] == 'new' || params[:action] == 'create') %>
+	<h3>New Worker</h3>
+<% else %>
+	<h3>Edit Worker</h3>
+<% end %>
+
+<%= form_for(@worker) do |form| %>
+	<table border="2px" style="width:25%" class="table table-striped">
+		<tr>
+			<td>First Name</td>
+			<td><%= form.text_field :first_name, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td><%= form.text_field :last_name, class: 'form-control' %></td>
+		</tr>
+		<tr>
+			<% if (params[:action] == 'new' || params[:action] == 'create') %>
+				<td colspan="2" align="center"><%= form.submit('Create') %></td>
+			<% else %>
+				<td colspan="2" align="center"><%= form.submit('Update') %></td>
+			<% end %>
+			
+		</tr>
+	</table>
+<% end %>
+</center>

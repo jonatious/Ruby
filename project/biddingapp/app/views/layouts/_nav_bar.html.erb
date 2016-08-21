@@ -1,0 +1,42 @@
+<head>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/customers/login">Bidding Site</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<% if session[:username] != nil%>
+     		<ul class="nav navbar-nav">
+     		  <li class="dropdown">
+     		    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+     		    <ul class="dropdown-menu">
+     		      <li><a href="/customers/profile">View Profile</a></li>
+     		      <li role="separator" class="divider"></li>
+     		      <li><a href="/auction_items/new" data-remote=true>Sell an item</a></li>
+     		      <li role="separator" class="divider"></li>
+     		      <li><a href="/customers/display_items" data-remote=true>View my items</a></li>
+     		      <li role="separator" class="divider"></li>
+     		      <li><a href="/customers/display_bids" data-remote=true>View my bids</a></li>
+     		      <li role="separator" class="divider"></li>
+     		      <li><a href="/customers/logout">Logout</a></li>
+     		    </ul>
+     		  </li>
+     		</ul>
+				
+				<div class="Right navbar-right">
+					<ul class="nav navbar-nav">
+						<li><a href="/customers/logout">Log out</a></li>
+					</ul>
+				</div>
+			<% end %>
+    </div>
+  </div>
+</nav>
+</head>

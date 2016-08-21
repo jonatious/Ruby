@@ -1,0 +1,12 @@
+<tr>
+	<td>
+<div class="alert alert-danger">
+	<p>Error(s):</p><br>
+	<ul>
+	<% error.errors.full_messages.each do |message| %>
+  	<li><%= message %></li>
+	<% end %>
+	</ul>
+</div>
+</td>
+</tr>

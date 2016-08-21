@@ -1,0 +1,17 @@
+<center>
+	<h4>Hello <%= "#{@customer.first_name} #{@customer.last_name}"%></h4><br>
+	<table style="width:30%;border-spacing:5px"  border="2px" class="table table-striped">
+  	<tr>
+			<td>Total number of my auctions: </td>
+			<td><%= @customer.auction_items.count%></td>
+		</tr>
+  	<tr>
+			<td>Number of active auctions: </td>
+			<td><%= @customer.auction_items.where(:sold_y_n => 'No').count%></td>
+		</tr>
+  	<tr>
+			<td>Total number of my bids: </td>
+			<td><%= @customer.bids.count%></td>
+		</tr>
+	</table>
+</center>

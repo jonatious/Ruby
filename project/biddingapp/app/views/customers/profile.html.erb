@@ -1,0 +1,31 @@
+<style>
+#nav {
+   line-height:30px;
+   height:500px;
+   width:150px;
+   float:left;
+   padding:5px;
+}
+#section {
+   width:850px;
+   float:left;
+   padding:10px;
+}
+</style>
+<div style="width: 100%;">
+   <div id="nav" style="float:left; width: 11%;">
+		 <ul class="nav nav-pills nav-stacked">
+		   <li role="presentation" id="home" class="active"><%= link_to 'Home', profile_customers_path, :remote => true %></li>
+		   <li role="presentation" id="update_profile"><%= link_to 'Update Profile', edit_customer_path(0), :remote => true %></li>
+		   <li role="presentation" id="change_pass"><%= link_to 'Change Password', change_password_customers_path, :remote => true %></li>
+		   <li role="presentation" id="sell_item"><%= link_to 'Auction an Item', new_auction_item_path, :remote => true %></li>
+		   <li role="presentation" id="view_items"><%= link_to 'View My Items', display_items_customers_path, :remote => true %></li>
+		   <li role="presentation" id="view_bids"><%= link_to 'View My Bids', display_bids_customers_path, :remote => true %></li>
+		   <li role="presentation" id="search_items"><%= link_to 'Search for Items', search_customers_path, :remote => true %></li>
+		 </ul>
+   </div>
+   <div id="section">
+		 <%= render 'summary' %>
+   </div>
+</div>
+<div style="clear:both"></div>

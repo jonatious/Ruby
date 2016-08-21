@@ -1,0 +1,5 @@
+<center>
+	<h3><p class="text-warning">Are you sure you want to delete '<%= AuctionItem.find(session[:item_id]).name %>'?</p></h3><br>
+	<%= link_to 'Yes', {:controller => "auction_items", :action => "delete", :id => session[:item_id] }, :remote => true, :class => 'btn btn-danger'  %>&nbsp&nbsp
+	<%= link_to 'No', display_items_customers_path, :remote => true, :class => 'btn btn-info'  %>
+</center>

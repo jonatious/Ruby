@@ -1,0 +1,27 @@
+<center>
+	<% if @all_works.count > 0 %>
+		<h4>Work List</h4><br>
+		<table border="2px" style="width:30%" class="table table-striped">
+			<tr>
+				<th class="active">Name</th>
+				<th class="active">Status</th>
+				<th class="active">Assigned Worker</th>
+				<th class="active">Review</th>
+			</tr>
+			<% @all_works.each do |w| %>
+				<tr>
+					<td><%= w.name %></td>
+					<td><%= w.work_status.status %></td>
+					<% if w.worker %>
+						<td><%= w.worker.first_name%> <%= w.worker.last_name%></td>
+					<% else %>
+						<td>Unassigned</td>
+					<% end %>
+					<td align="center"><%= link_to 'Review', work_path(w.id), class: 'btn btn-info' %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+	<br>
+	<%= link_to 'New Work', new_work_path, class: 'btn btn-primary'%>
+</center>

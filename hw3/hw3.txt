@@ -1,0 +1,56 @@
+HW 3. Due 11:59PM June 25
+
+Mention the fundamental principles and patterns that Rails is built on. 
+Explain each of those and how each one helps. Are there any disadvantages of 
+these.
+
+
+The core principles on which rails is built are as follows:
+
+1) Rapid Application Development
+2) Don't Repeat Yourself (DRY) principle
+3) Convention over Configuration 
+4) Opinionated framework
+5) MVC architecture
+                        
+Explanation:
+
+Rapid Application Development:
+
+Using Rapid Application Development (RAD), an application can be developed rapidly because it emphasizes more on creating prototypes and using them iteratively for development rather than planning. Since ruby is lightweight and employs a great deal of metaprogramming to synthesize code, rails conveniently adopts the RAD principle.
+
+Don't Repeat Yourself:
+
+The DRY principle states that "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. The rails development environment is modularized and aids in reusability of code. 
+
+The DRY principle is implemented using Meta programming. For example, in an application involving creating and editing names, both the views have similar functionalities. These functionalities can be combined into one by creating partials and any change in the partials will be reflected in both the views.
+
+Thus, when DRY principle is efficiently implemented, a modification of any single element of a system changes other logically related elements uniformly to keep in sync. This reduces the code on a large scale.
+
+Convention Over Configuration:
+
+Convention over configuration principle aims to reduce time and effort taken by web application developers by using minimal configuration files, pre-defined directory structure and following simple naming conventions. However, this does not necessarily reduce flexibility in development of the code. 
+
+For example it is a convention to have a class named 'Graduate' in the model when a table named 'graduates' is used in a database. However, this active record convention can be bypassed and a different name can also be given to the table. 
+
+Thus, by following the ruby conventions we don't have to spend much time configuring files for setup, and a set of conventions will help in speeding up development.
+
+Opinionated Framework:
+
+The concept of opinionated framework favors convention over configuration. Opinionated framework imposes a certain template on the developers and enforces them to follow it.  Active records (Object-Relational model) in ruby on rails is a classic example to prove that rails is opinionated.
+
+Deviating from the templates will make the development process frustrating and difficult. Following the templates, however, makes live much easier.
+
+Model View Controller (MVC) architecture:
+
+MVC architecture divides the web application into 3 subsystems: Model, View,and Controller. In a typical MVC scenario, the user request comes to the controller initially. The controller finds an appropriate view and interacts with model. The model finally interacts with the database and sends the response to controller which gives the output parameter to view.
+
+Thus, MVC architecture reduces the dependencies between presentation layer (views) and the data layer (model). This leads to an easy code maintenance scenario. 
+
+Disadvantages:
+
+Opinionated framework/Convention over Configuration can be great to use, if the application requirements maps onto the solution nicely. But, it can be painful to build the parts that don't map onto the constructs specified. For example, in a many to many relationship the join table has a naming convention of arranging the table names in alphabetical order. If this convention is deviated, we don't get expected results. So there are some occasions where developers are forced to deviate from their thinking and also this can be an issue when a legacy application is moved to rails.
+
+DRY principle in some instances tends to introduce code complexity where a simple duplication would not cost much. Also, having a lot of interdependencies means anytime you change anything and if something goes wrong then everything goes wrong.
+
+Total [10]: 10

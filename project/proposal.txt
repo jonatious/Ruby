@@ -1,0 +1,36 @@
+Write a short paragraph (or two) describing the project you like to create. 
+Feel free to provide a list of features. The project should be a web 
+application. Once you create the proposal, drop an email to Venkat asking him 
+to review your proposal. He will let you know if more details are needed, if 
+scope has to be changed. The final demo by your team will be in class on July 
+7th.
+
+Demo: July 7th in class
+Final code review: July 7th
+Project repository access available until 11:59PM July 9th
+------------------------------------------------------------------------------
+
+The proposal involves building an auction website. 
+Requirements:
+The application involves 
+a) Creating login page.  
+b) Creating a sign up page for all users.
+c) Seller can post the description of the item in a questionnaire. These details will be posted on the site. 
+d) Buyer can login and search for items and make bids on them.
+e) A user can be both seller and a buyer for another seller's auction.
+f) When the auction ends the bidder with highest value will be the winner.
+
+Total [30]: 29
+Your program works [10 pts]:
+Not clear how I can accept a bid and sell the item.
+
+Code quality [5 pts]:
+
+Design quality [5 pts]:
+
+Code coverage through automated tests [5 pts]:
+Model level tests [2]:
+Controller level tests [2]:
+Integration tests [1]:
+
+Demo [5 pts]:

@@ -1,0 +1,9 @@
+$('#home').attr('class', '');
+$('#update_profile').attr('class', '');
+$('#sell_item').attr('class', '');
+$('#view_items').attr('class', '');
+$('#view_bids').attr('class', '');
+$('#change_pass').attr('class', '');
+$('#search_items').attr('class', '');
+$('#section').html("<%= raw escape_javascript(render 'view')%>");
+$('#message_div').html("<%=raw escape_javascript(render :partial => '/layouts/messages', :locals => {:notice => flash[:notice], :alert => flash[:alert]}) %>");
